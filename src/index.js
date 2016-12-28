@@ -1,9 +1,9 @@
-import {FormRow, FormItem, Input, FormInput, onInputChange, FormButton} from "./Form.jsx";
-module.exports = {
+import {FormRow, FormItem, FormSelect, FormInput, onInputChange, FormButton} from "./Form.jsx";
+module.exports={
   FormRow,
   FormItem,
-  FormInput,
-  FormButton,
   FormSelect,
-  onInputChange
+  FormInput,
+  onInputChange,
+  FormButton
 }

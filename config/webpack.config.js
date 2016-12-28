@@ -4,6 +4,7 @@ var path = require('path');
 module.exports = {
   entry: [
     './src/index.js' // Your appʼs entry point
+    // './src/Form.jsx' // Your appʼs entry point
   ],
   output: {
     path: path.join(__dirname, '../dist/'),
