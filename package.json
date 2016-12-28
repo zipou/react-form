@@ -1,10 +1,10 @@
 {
   "name": "box4b-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helpers for box4b's forms in React",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --config src/config/webpack.config.js --progress --profile --colors"
+    "build": "NODE_ENV=production webpack -p --config config/webpack.config.js --progress --profile --colors"
   },
   "repository": {
     "type": "git",

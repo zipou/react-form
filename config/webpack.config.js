@@ -6,7 +6,7 @@ module.exports = {
     './src/index.jsx' // Your appʼs entry point
   ],
   output: {
-    path: path.join(__dirname, '../../dist/'),
+    path: path.join(__dirname, '../'),
     filename: 'index.js',
   },
   resolve: {
