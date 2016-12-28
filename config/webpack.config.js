@@ -3,10 +3,10 @@ var path = require('path');
 
 module.exports = {
   entry: [
-    './src/index.jsx' // Your appʼs entry point
+    './src/index.js' // Your appʼs entry point
   ],
   output: {
-    path: path.join(__dirname, '../'),
+    path: path.join(__dirname, '../dist/'),
     filename: 'index.js',
   },
   resolve: {
