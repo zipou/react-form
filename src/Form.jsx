@@ -138,7 +138,7 @@ export class FormButton extends React.Component {
 
   render() {
     let {name, value, type}= this.props
-    return <input type="button" className={"btn btn-" + type } value={value} onClick={_handleClic.bind(this)}/>
+    return <input type="button" className={"btn btn-" + type } value={value} onClick={this._handleClic.bind(this)}/>
   }
 }
 

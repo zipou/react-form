@@ -151,7 +151,7 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
-        { className: "form-group col-md-" + size + " col-lg-" + size + "" },
+        { className: "form-group col-md-" + size + " col-lg-" + size + "", style: { float: "none" } },
         _react2.default.createElement(
           "div",
           { className: "input-group" },
