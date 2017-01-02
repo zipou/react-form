@@ -64,7 +64,7 @@ export const FormInput = class extends React.Component {
     delete props[errors];
     let error = (errors && errors[name]);
     size = (size) ? size : 12;
-    return <div className={"form-group col-md-"+size+" col-lg-"+size+""}>
+    return <div className={"form-group col-md-"+size+" col-lg-"+size+"" style={{float:"none"}}}>
       <div className="input-group">
         <span className="input-group-addon">{(placeholder) ? placeholder : name}</span>
         <input className={"form-control"} {...props}></input>
@@ -143,7 +143,7 @@ export class FormButton extends React.Component {
 }
 
 export class FormSelect extends React.Component {
-  
+
   static propTypes = {
     placeholder : React.PropTypes.string,
     size: React.PropTypes.number,
