@@ -1,6 +1,6 @@
 {
   "name": "box4b-form",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Helpers for box4b's forms in React",
   "main": "build/index.js",
   "scripts": {
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/zipou/react-form#readme",
   "dependencies": {
-    "bootstrap": "^3.3.5",
     "react": ">15.0.0",
     "react-dom": ">15.0.0"
   },
