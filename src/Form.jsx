@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from "react-bootstrap";
 
 export class Form extends React.Component {
 
@@ -122,17 +121,34 @@ export class CollectionRow extends React.Component {
   }
 }
 
-export class FormButton extends Button {
+export class FormButton extends React.Component {
 
+  static propTypes = {
+    value : React.PropTypes.string,
+    type: React.PropTypes.string,
+    onClick: React.PropTypes.func
+  };
+
+  _handleClic(event) {
+    let {onClick} = this.props;
+    if (onClick) {
+      onClick(event);
+    }
+  }
+
+  render() {
+    let {name, value, type}= this.props
+    return <input type="button" className={"btn btn-" + type } value={value} onClick={_handleClic.bind(this)}/>
+  }
 }
 
 export class FormSelect extends React.Component {
-
+  
   static propTypes = {
     placeholder : React.PropTypes.string,
     size: React.PropTypes.number,
     name: React.PropTypes.string.isRequired
-  };
+  }
 
   render() {
     let {props} = this;
