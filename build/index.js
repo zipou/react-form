@@ -296,7 +296,7 @@ var FormButton = exports.FormButton = function (_React$Component8) {
           value = _props3.value,
           type = _props3.type;
 
-      return _react2.default.createElement("input", { type: "button", className: "btn btn-" + type, value: value, onClick: _handleClic.bind(this) });
+      return _react2.default.createElement("input", { type: "button", className: "btn btn-" + type, value: value, onClick: this._handleClic.bind(this) });
     }
   }]);
 

@@ -154,7 +154,7 @@ export class FormSelect extends React.Component {
     let {props} = this;
     let {placeholder, size, name} = props
     size = (size) ? size : 12;
-    return <div className={"form-group col-md-"+size+" col-lg-"+size+""}>
+    return <div className={"form-group col-md-"+size+" col-lg-"+size+""} style={{float:"none"}}>
       <div className="input-group">
         <span className="input-group-addon">{(placeholder) ? placeholder : name}</span>
         <select className="form-control" {...props}>
