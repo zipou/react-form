@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FormSelect = exports.FormButton = exports.CollectionRow = exports.onInputChange = exports.FormError = exports.FormInput = exports.Input = exports.FormRow = exports.FormItem = exports.Form = undefined;
+exports.ColorPicker = exports.FormSelect = exports.FormButton = exports.CollectionRow = exports.onInputChange = exports.FormError = exports.FormInput = exports.Input = exports.FormRow = exports.FormItem = exports.Form = undefined;
 
 var _class, _temp;
 
@@ -329,7 +329,7 @@ var FormSelect = exports.FormSelect = function (_React$Component9) {
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
-        { className: "form-group col-md-" + size + " col-lg-" + size + "" },
+        { className: "form-group col-md-" + size + " col-lg-" + size + "", style: { float: "none" } },
         _react2.default.createElement(
           "div",
           { className: "input-group" },
@@ -356,3 +356,101 @@ FormSelect.propTypes = {
   size: _react2.default.PropTypes.number,
   name: _react2.default.PropTypes.string.isRequired
 };
+
+var ColorPicker = exports.ColorPicker = function (_React$Component10) {
+  _inherits(ColorPicker, _React$Component10);
+
+  function ColorPicker(props) {
+    _classCallCheck(this, ColorPicker);
+
+    var _this10 = _possibleConstructorReturn(this, (ColorPicker.__proto__ || Object.getPrototypeOf(ColorPicker)).call(this, props));
+
+    _this10.state = {
+      color: null
+    };
+    return _this10;
+  }
+
+  _createClass(ColorPicker, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(props) {
+      this.setState({
+        color: props.color
+      });
+    }
+  }, {
+    key: "_handleChange",
+    value: function _handleChange(name) {
+      var state = this.state;
+      state.color = name;
+      this.setState(state);
+      if (this.props.onChange) {
+        this.props.onChange(state);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this11 = this;
+
+      var _props4 = this.props,
+          colors = _props4.colors,
+          selected = _props4.selected;
+
+      return _react2.default.createElement(
+        "div",
+        { className: "input-group" },
+        _react2.default.createElement(
+          "span",
+          { className: "input-group-addon" },
+          "Couleur"
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "form-control", style: { height: "100%" } },
+          colors && colors.map(function (item, index) {
+            return _react2.default.createElement(ColorPickerItem, { color: item, key: "article_color" + index, onClick: _this11._handleChange.bind(_this11), selected: selected === item });
+          })
+        )
+      );
+    }
+  }]);
+
+  return ColorPicker;
+}(_react2.default.Component);
+
+ColorPicker.propTypes = {
+  colors: _react2.default.propTypes.array,
+  selected: _react2.default.propTypes.bool
+};
+
+var ColorPickerItem = function (_React$Component11) {
+  _inherits(ColorPickerItem, _React$Component11);
+
+  function ColorPickerItem(props) {
+    _classCallCheck(this, ColorPickerItem);
+
+    return _possibleConstructorReturn(this, (ColorPickerItem.__proto__ || Object.getPrototypeOf(ColorPickerItem)).call(this, props));
+  }
+
+  _createClass(ColorPickerItem, [{
+    key: "render",
+    value: function render() {
+      var _props5 = this.props,
+          selected = _props5.selected,
+          onClick = _props5.onClick,
+          color = _props5.color;
+
+      return _react2.default.createElement("div", { onClick: onClick.bind(this, color), style: { margin: 5, height: 45, width: 45, float: "left", border: selected ? "5px black solid" : "5px white solid", background: color } });
+    }
+  }]);
+
+  return ColorPickerItem;
+}(_react2.default.Component);
+
+ColorPickerItem.propTypes = {
+  color: _react2.default.propTypes.string,
+  selected: _react2.default.propTypes.bool,
+  onClick: _react2.default.propTypes.func
+};
+exports.default = ColorPickerItem;

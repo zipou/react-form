@@ -164,3 +164,65 @@ export class FormSelect extends React.Component {
     </div>
   }
 }
+
+export class ColorPicker extends React.Component {
+
+  static propTypes= {
+    colors: React.propTypes.array,
+    selected: React.propTypes.bool
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      color : null
+    }
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState({
+      color: props.color
+    });
+  }
+
+  _handleChange(name) {
+    let state = this.state;
+    state.color = name;
+    this.setState(state);
+    if(this.props.onChange) {
+      this.props.onChange(state);
+    }
+  }
+
+  render() {
+    let {colors, selected} = this.props;
+    return(<div className="input-group">
+        <span className="input-group-addon">Couleur</span>
+        <div className="form-control" style={{height: "100%"}}>
+          {colors && colors.map((item, index) => {
+            return <ColorPickerItem color={item} key={"article_color" + index} onClick={this._handleChange.bind(this)}  selected={selected===item} />
+          })}
+        </div>
+      </div>
+    )
+  }
+}
+
+export default class ColorPickerItem extends React.Component {
+
+  static propTypes= {
+    color: React.propTypes.string,
+    selected: React.propTypes.bool,
+    onClick: React.propTypes.func
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let {selected, onClick, color} = this.props;
+    return 	<div onClick={onClick.bind(this, color)} style={{margin: 5, height: 45, width: 45, float:"left", border: (selected) ? "5px black solid": "5px white solid", background: color}}></div>
+  }
+
+}

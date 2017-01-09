@@ -1,6 +1,6 @@
 {
   "name": "box4b-form",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Helpers for box4b's forms in React",
   "main": "build/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "forms",
     "redux"
   ],
-  "author": "Romain Fenninger <romain@fenninger.fr>",
+  "author": "Romain Fenninger <romain@box4b.fr>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zipou/react-form/issues"
@@ -25,7 +25,8 @@
   "homepage": "https://github.com/zipou/react-form#readme",
   "dependencies": {
     "react": ">15.0.0",
-    "react-dom": ">15.0.0"
+    "react-dom": ">15.0.0",
+    "react-bootstrap": ">0.28.2"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
