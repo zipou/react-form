@@ -168,8 +168,8 @@ export class FormSelect extends React.Component {
 export class ColorPicker extends React.Component {
 
   static propTypes= {
-    colors: React.propTypes.array,
-    selected: React.propTypes.bool
+    colors: React.PropTypes.array,
+    selected: React.PropTypes.bool
   }
 
   constructor(props) {
@@ -211,9 +211,9 @@ export class ColorPicker extends React.Component {
 export default class ColorPickerItem extends React.Component {
 
   static propTypes= {
-    color: React.propTypes.string,
-    selected: React.propTypes.bool,
-    onClick: React.propTypes.func
+    color: React.PropTypes.string,
+    selected: React.PropTypes.bool,
+    onClick: React.PropTypes.func
   }
 
   constructor(props) {
