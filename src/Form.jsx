@@ -176,6 +176,7 @@ export class FormSelect extends React.Component {
 export class ColorPicker extends React.Component {
 
   static propTypes= {
+    name: React.PropTypes.string,
     colors: React.PropTypes.array,
     errors: React.PropTypes.object,
     selected: React.PropTypes.bool
@@ -204,10 +205,10 @@ export class ColorPicker extends React.Component {
   }
 
   render() {
-    let {colors, selected, errors} = this.props;
+    let {colors, selected, errors, name, label} = this.props;
     let error = (errors && errors[name]);
     return(<div className="input-group">
-        <span className="input-group-addon">Couleur</span>
+        <span className="input-group-addon">{(label) ? label : name}</span>
         <div className="form-control" style={{height: "100%"}}>
           {colors && colors.map((item, index) => {
             return <ColorPickerItem color={item} key={"article_color" + index} onClick={this._handleChange.bind(this)}  selected={selected===item} />

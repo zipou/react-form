@@ -415,7 +415,9 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
       var _props4 = this.props,
           colors = _props4.colors,
           selected = _props4.selected,
-          errors = _props4.errors;
+          errors = _props4.errors,
+          name = _props4.name,
+          label = _props4.label;
 
       var error = errors && errors[name];
       return _react2.default.createElement(
@@ -424,7 +426,7 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
         _react2.default.createElement(
           "span",
           { className: "input-group-addon" },
-          "Couleur"
+          label ? label : name
         ),
         _react2.default.createElement(
           "div",
@@ -450,6 +452,7 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
 }(_react2.default.Component);
 
 ColorPicker.propTypes = {
+  name: _react2.default.PropTypes.string,
   colors: _react2.default.PropTypes.array,
   errors: _react2.default.PropTypes.object,
   selected: _react2.default.PropTypes.bool
