@@ -174,11 +174,7 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
           addon && _react2.default.createElement(
             "span",
             { className: "input-group-addon" },
-            _react2.default.createElement(
-              "span",
-              { className: "label label-danger" },
-              addon
-            )
+            addon
           )
         )
       );
