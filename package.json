@@ -1,6 +1,6 @@
 {
   "name": "box4b-form",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Helpers for box4b's forms in React",
   "main": "build/index.js",
   "scripts": {

@@ -144,6 +144,7 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
       var placeholder = props.placeholder,
           size = props.size,
           name = props.name,
+          addon = props.addon,
           errors = props.errors;
 
       delete props[errors];
@@ -169,6 +170,15 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
               { className: "label label-danger" },
               error
             )
+          ),
+          addon && _react2.default.createElement(
+            "span",
+            { className: "input-group-addon" },
+            _react2.default.createElement(
+              "span",
+              { className: "label label-danger" },
+              addon
+            )
           )
         )
       );
@@ -179,7 +189,8 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
 }(_react2.default.Component), _class.propTypes = {
   placeholder: _react2.default.PropTypes.string,
   size: _react2.default.PropTypes.number,
-  error: _react2.default.PropTypes.string,
+  errors: _react2.default.PropTypes.object,
+  addon: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.string, _react2.default.PropTypes.element]),
   name: _react2.default.PropTypes.string.isRequired
 }, _temp);
 
@@ -324,8 +335,10 @@ var FormSelect = exports.FormSelect = function (_React$Component9) {
       var props = this.props;
       var placeholder = props.placeholder,
           size = props.size,
-          name = props.name;
+          name = props.name,
+          errors = props.errors;
 
+      var error = errors && errors[name];
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
@@ -342,6 +355,15 @@ var FormSelect = exports.FormSelect = function (_React$Component9) {
             "select",
             _extends({ className: "form-control" }, props),
             this.props.children
+          ),
+          error && _react2.default.createElement(
+            "span",
+            { className: "input-group-addon" },
+            _react2.default.createElement(
+              "span",
+              { className: "label label-danger" },
+              error
+            )
           )
         )
       );
@@ -354,6 +376,7 @@ var FormSelect = exports.FormSelect = function (_React$Component9) {
 FormSelect.propTypes = {
   placeholder: _react2.default.PropTypes.string,
   size: _react2.default.PropTypes.number,
+  errors: _react2.default.PropTypes.object,
   name: _react2.default.PropTypes.string.isRequired
 };
 
@@ -395,8 +418,10 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
 
       var _props4 = this.props,
           colors = _props4.colors,
-          selected = _props4.selected;
+          selected = _props4.selected,
+          errors = _props4.errors;
 
+      var error = errors && errors[name];
       return _react2.default.createElement(
         "div",
         { className: "input-group" },
@@ -411,6 +436,15 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
           colors && colors.map(function (item, index) {
             return _react2.default.createElement(ColorPickerItem, { color: item, key: "article_color" + index, onClick: _this11._handleChange.bind(_this11), selected: selected === item });
           })
+        ),
+        error && _react2.default.createElement(
+          "span",
+          { className: "input-group-addon" },
+          _react2.default.createElement(
+            "span",
+            { className: "label label-danger" },
+            error
+          )
         )
       );
     }
@@ -420,8 +454,9 @@ var ColorPicker = exports.ColorPicker = function (_React$Component10) {
 }(_react2.default.Component);
 
 ColorPicker.propTypes = {
-  colors: _react2.default.propTypes.array,
-  selected: _react2.default.propTypes.bool
+  colors: _react2.default.PropTypes.array,
+  errors: _react2.default.PropTypes.object,
+  selected: _react2.default.PropTypes.bool
 };
 
 var ColorPickerItem = function (_React$Component11) {
@@ -449,8 +484,8 @@ var ColorPickerItem = function (_React$Component11) {
 }(_react2.default.Component);
 
 ColorPickerItem.propTypes = {
-  color: _react2.default.propTypes.string,
-  selected: _react2.default.propTypes.bool,
-  onClick: _react2.default.propTypes.func
+  color: _react2.default.PropTypes.string,
+  selected: _react2.default.PropTypes.bool,
+  onClick: _react2.default.PropTypes.func
 };
 exports.default = ColorPickerItem;

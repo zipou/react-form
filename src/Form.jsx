@@ -54,13 +54,17 @@ export const FormInput = class extends React.Component {
   static propTypes = {
     placeholder : React.PropTypes.string,
     size: React.PropTypes.number,
-    error: React.PropTypes.string,
+    errors: React.PropTypes.object,
+    addon: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.element
+    ]),
     name: React.PropTypes.string.isRequired
   };
 
   render() {
     let {props} = this;
-    let {placeholder, size, name, errors} = props
+    let {placeholder, size, name, addon, errors} = props
     delete props[errors];
     let error = (errors && errors[name]);
     size = (size) ? size : 12;
@@ -69,6 +73,7 @@ export const FormInput = class extends React.Component {
         <span className="input-group-addon">{(placeholder) ? placeholder : name}</span>
         <input className={"form-control"} {...props}></input>
         {error && <span className="input-group-addon"><span className="label label-danger">{error}</span></span>}
+        {addon && <span className="input-group-addon"><span className="label label-danger">{addon}</span></span>}
       </div>
     </div>
   }
@@ -147,12 +152,14 @@ export class FormSelect extends React.Component {
   static propTypes = {
     placeholder : React.PropTypes.string,
     size: React.PropTypes.number,
+    errors: React.PropTypes.object,
     name: React.PropTypes.string.isRequired
   }
 
   render() {
     let {props} = this;
-    let {placeholder, size, name} = props
+    let {placeholder, size, name, errors} = props
+    let error = (errors && errors[name]);
     size = (size) ? size : 12;
     return <div className={"form-group col-md-"+size+" col-lg-"+size+""} style={{float:"none"}}>
       <div className="input-group">
@@ -160,6 +167,7 @@ export class FormSelect extends React.Component {
         <select className="form-control" {...props}>
           {this.props.children}
         </select>
+        {error && <span className="input-group-addon"><span className="label label-danger">{error}</span></span>}
       </div>
     </div>
   }
@@ -169,6 +177,7 @@ export class ColorPicker extends React.Component {
 
   static propTypes= {
     colors: React.PropTypes.array,
+    errors: React.PropTypes.object,
     selected: React.PropTypes.bool
   }
 
@@ -195,7 +204,8 @@ export class ColorPicker extends React.Component {
   }
 
   render() {
-    let {colors, selected} = this.props;
+    let {colors, selected, errors} = this.props;
+    let error = (errors && errors[name]);
     return(<div className="input-group">
         <span className="input-group-addon">Couleur</span>
         <div className="form-control" style={{height: "100%"}}>
@@ -203,6 +213,7 @@ export class ColorPicker extends React.Component {
             return <ColorPickerItem color={item} key={"article_color" + index} onClick={this._handleChange.bind(this)}  selected={selected===item} />
           })}
         </div>
+        {error && <span className="input-group-addon"><span className="label label-danger">{error}</span></span>}
       </div>
     )
   }
