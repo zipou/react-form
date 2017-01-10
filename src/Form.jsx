@@ -73,7 +73,7 @@ export const FormInput = class extends React.Component {
         <span className="input-group-addon">{(placeholder) ? placeholder : name}</span>
         <input className={"form-control"} {...props}></input>
         {error && <span className="input-group-addon"><span className="label label-danger">{error}</span></span>}
-        {addon && <span className="input-group-addon"><span className="label label-danger">{addon}</span></span>}
+        {addon && <span className="input-group-addon">{addon}</span>}
       </div>
     </div>
   }
