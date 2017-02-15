@@ -65,7 +65,7 @@ var FormItem = exports.FormItem = function (_React$Component2) {
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
-        { className: "form-group col-md-" + size + " col-lg-" + size + "" },
+        { className: "form-group col-md-" + size + " col-lg-" + size + " col-xs-12", style: { paddingLeft: 0, paddingRight: 0 } },
         _react2.default.createElement(
           "div",
           { className: "input-group" },
@@ -152,7 +152,7 @@ var FormInput = exports.FormInput = (_temp = _class = function (_React$Component
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
-        { className: "form-group col-md-" + size + " col-lg-" + size + "", style: { float: "none" } },
+        { className: "form-group col-md-" + size + " col-lg-" + size + " col-xs-12", style: { float: "none", paddingLeft: 0, paddingRight: 0 } },
         _react2.default.createElement(
           "div",
           { className: "input-group" },
@@ -338,7 +338,7 @@ var FormSelect = exports.FormSelect = function (_React$Component9) {
       size = size ? size : 12;
       return _react2.default.createElement(
         "div",
-        { className: "form-group col-md-" + size + " col-lg-" + size + "", style: { float: "none" } },
+        { className: "form-group col-md-" + size + " col-lg-" + size + " col-xs-12", style: { float: "none", paddingLeft: 0, paddingRight: 0 } },
         _react2.default.createElement(
           "div",
           { className: "input-group" },

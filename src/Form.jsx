@@ -21,7 +21,7 @@ export class FormItem extends React.Component {
     let {placeholder, size} = this.props
     size = (size) ? size : 12;
     return (
-      <div className={"form-group col-md-"+size+" col-lg-"+size+""}>
+      <div className={"form-group col-md-"+size+" col-lg-"+size+" col-xs-12"} style={{paddingLeft: 0, paddingRight: 0}}>
         <div className="input-group">
           <span className="input-group-addon">{placeholder}</span>
           {this.props.children}
@@ -161,7 +161,7 @@ export class FormSelect extends React.Component {
     let {placeholder, size, name, errors} = props
     let error = (errors && errors[name]);
     size = (size) ? size : 12;
-    return <div className={"form-group col-md-"+size+" col-lg-"+size+""} style={{float:"none"}}>
+    return <div className={"form-group col-md-"+size+" col-lg-"+size+" col-xs-12" } style={{float:"none", paddingLeft :0, paddingRight: 0}}>
       <div className="input-group">
         <span className="input-group-addon">{(placeholder) ? placeholder : name}</span>
         <select className="form-control" {...props}>
