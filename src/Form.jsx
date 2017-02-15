@@ -33,8 +33,9 @@ export class FormItem extends React.Component {
 export class FormRow extends React.Component {
 
   render() {
+    let {margin} = this.props;
     return (
-      <div style={{margin: 10}}>
+      <div style={{margin: (margin) ? margin : 0}}>
         {this.props.children}
       </div>
     )

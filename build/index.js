@@ -95,9 +95,11 @@ var FormRow = exports.FormRow = function (_React$Component3) {
   _createClass(FormRow, [{
     key: "render",
     value: function render() {
+      var margin = this.props.margin;
+
       return _react2.default.createElement(
         "div",
-        { style: { margin: 10 } },
+        { style: { margin: margin ? margin : 0 } },
         this.props.children
       );
     }
