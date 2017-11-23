@@ -52,16 +52,16 @@ export class Input extends React.Component {
 
 export const FormInput = class extends React.Component {
 
-  static propTypes = {
-    placeholder : React.PropTypes.string,
-    size: React.PropTypes.number,
-    errors: React.PropTypes.object,
-    addon: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.element
-    ]),
-    name: React.PropTypes.string.isRequired
-  };
+  // static propTypes = {
+  //   placeholder : React.PropTypes.string,
+  //   size: React.PropTypes.number,
+  //   errors: React.PropTypes.object,
+  //   addon: React.PropTypes.oneOfType([
+  //     React.PropTypes.string,
+  //     React.PropTypes.element
+  //   ]),
+  //   name: React.PropTypes.string.isRequired
+  // };
 
   render() {
     let {props} = this;
@@ -129,11 +129,11 @@ export class CollectionRow extends React.Component {
 
 export class FormButton extends React.Component {
 
-  static propTypes = {
-    value : React.PropTypes.string,
-    type: React.PropTypes.string,
-    onClick: React.PropTypes.func
-  };
+  // static propTypes = {
+  //   value : React.PropTypes.string,
+  //   type: React.PropTypes.string,
+  //   onClick: React.PropTypes.func
+  // };
 
   _handleClic(event) {
     let {onClick} = this.props;
@@ -150,12 +150,12 @@ export class FormButton extends React.Component {
 
 export class FormSelect extends React.Component {
 
-  static propTypes = {
-    placeholder : React.PropTypes.string,
-    size: React.PropTypes.number,
-    errors: React.PropTypes.object,
-    name: React.PropTypes.string.isRequired
-  }
+  // static propTypes = {
+  //   placeholder : React.PropTypes.string,
+  //   size: React.PropTypes.number,
+  //   errors: React.PropTypes.object,
+  //   name: React.PropTypes.string.isRequired
+  // }
 
   render() {
     let {props} = this;
@@ -176,12 +176,12 @@ export class FormSelect extends React.Component {
 
 export class ColorPicker extends React.Component {
 
-  static propTypes= {
-    name: React.PropTypes.string,
-    colors: React.PropTypes.array,
-    errors: React.PropTypes.object,
-    selected: React.PropTypes.bool
-  }
+  // static propTypes= {
+  //   name: React.PropTypes.string,
+  //   colors: React.PropTypes.array,
+  //   errors: React.PropTypes.object,
+  //   selected: React.PropTypes.bool
+  // }
 
   constructor(props) {
     super(props);
@@ -223,11 +223,11 @@ export class ColorPicker extends React.Component {
 
 export default class ColorPickerItem extends React.Component {
 
-  static propTypes= {
-    color: React.PropTypes.string,
-    selected: React.PropTypes.bool,
-    onClick: React.PropTypes.func
-  }
+  // static propTypes= {
+  //   color: React.PropTypes.string,
+  //   selected: React.PropTypes.bool,
+  //   onClick: React.PropTypes.func
+  // }
 
   constructor(props) {
     super(props);
